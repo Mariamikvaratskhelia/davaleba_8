@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Favorite Movies</h2>
+<ul>
+    {% for name, rating in films.items %}
+        <li>{{ name }} - IMDb: {{ rating }}
+            {% if rating > 8 %}
+                <strong>კარგია ფილმია</strong>
+            {% else %}
+                <strong>სტანდარტული ფილმია</strong>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
